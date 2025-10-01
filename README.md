@@ -32,7 +32,7 @@
 
 ### Ngoài ra còn có kiến thức về:
 - Ngôn ngữ lập trình: ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white) | ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white) | ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white) 
-- Phần mềm thiết kế: PTS, AI, AE, Pr
+- Phần mềm thiết kế: ![Photoshop](https://img.shields.io/badge/Photoshop-31A8FF?style=flat&logo=adobe-photoshop&logoColor=white) | ![Illustrator](https://img.shields.io/badge/Illustrator-FF9A00?style=flat&logo=adobe-illustrator&logoColor=white) | ![After Effects](https://img.shields.io/badge/After%20Effects-9999FF?style=flat&logo=adobe-after-effects&logoColor=white) | ![Premiere Pro](https://img.shields.io/badge/Premiere%20Pro-9999CC?style=flat&logo=adobe-premiere&logoColor=white)
 
 ---
 
