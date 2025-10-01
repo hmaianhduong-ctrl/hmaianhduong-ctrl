@@ -9,7 +9,7 @@
 
 --- 
 
-## Có thể liên hệ với tôi bằng cách:
+## 📬 Có thể liên hệ với tôi bằng cách:
 
 - **Điện thoại:** 0944036001
 - **Email:** [hmaianhduong@gmail.com](mailtohmaianhduong@gmail.com)  
@@ -24,7 +24,7 @@
 
 ---
 
-## Kỹ năng
+## 💻 Kỹ năng
 
 ### Các kỹ năng mềm như
 | Kỹ năng                       | Đánh giá         |
@@ -34,8 +34,7 @@
 | Làm việc nhóm                | ⭐⭐☆☆☆           |
 
 ### Ngoài ra còn có kiến thức về:
-- Ngôn ngữ lập trình: pascal, C, C++
-- Các công nghệ như:  HTML, CSS
+- Ngôn ngữ lập trình: ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white) | ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white) | ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white) 
 - Phần mềm thiết kế: PTS, AI, AE, Pr
 
 ---
