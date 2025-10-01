@@ -1,9 +1,6 @@
-# HUỲNH MAI ÁNH DƯƠNG
-
----
 
 ## Thông tin cá nhân
-
+- Họ và tên: Huỳnh Mai Ánh Dương
 - Sinh viên ngành Công nghệ Đa phương tiện  
 - Học viện Công nghệ Bưu chính Viễn thông, TP. Hồ Chí Minh  
 
