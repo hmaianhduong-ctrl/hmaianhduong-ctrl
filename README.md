@@ -47,13 +47,6 @@
 
 ---
 
-## Kinh nghiệm
-
-- Làm ban cán sự lớp tại các cấp Tiểu học, Trung học cơ sở và Trung học phổ thông  
-- Nhiều kinh nghiệm làm việc nhóm trong các môn học từ Trung học cơ sở, Trung học phổ thông đến Đại học, đặc biệt là vị trí trưởng nhóm
-
----
-
 ## Mục tiêu nghề nghiệp
 
 - Phát triển các sản phẩm cá nhân sáng tạo và ứng dụng công nghệ tiên tiến  
