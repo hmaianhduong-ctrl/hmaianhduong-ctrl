@@ -1,4 +1,6 @@
-![Profile](https://img.shields.io/badge/Profile-FF6EC7%20to%206EC1FF?style=for-the-badge&logoColor=white)
+<p align="center">
+  <img src="./banner.svg" alt="Profile banner" />
+</p>
 
 ## Thông tin cá nhân
 - Họ và tên: Huỳnh Mai Ánh Dương
