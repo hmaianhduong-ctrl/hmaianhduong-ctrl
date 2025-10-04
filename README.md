@@ -2,7 +2,7 @@
   <img src="./banner.svg" alt="Profile banner" />
 </p>
 
-## Thông tin cá nhân
+## 🏆 Thông tin cá nhân
 - Họ và tên: Huỳnh Mai Ánh Dương
 - Sinh viên ngành Công nghệ Đa phương tiện  
 - Học viện Công nghệ Bưu chính Viễn thông, TP. Hồ Chí Minh  
@@ -15,7 +15,7 @@
 - **Email:** [hmaianhduong@gmail.com](mailtohmaianhduong@gmail.com)  
 ---
 
-## Học vấn
+## 📚 Học vấn
 
 - Từng học chuyên Sinh trường THPT Cà Mau
 - GPA học kỳ:  
@@ -39,7 +39,7 @@
 
 ---
 
-## Sở thích
+## 🖋️ Sở thích
 
 - Thiết kế, chỉnh sửa video
 - Hỗ trợ truyền thông
@@ -47,7 +47,7 @@
 
 ---
 
-## Mục tiêu nghề nghiệp
+## 🎯 Mục tiêu nghề nghiệp
 
 - Phát triển các sản phẩm cá nhân sáng tạo và ứng dụng công nghệ tiên tiến  
 - Trở thành kỹ xảo viên
