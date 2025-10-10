@@ -26,12 +26,17 @@
 
 ## 💻 Kỹ năng
 
-### Các kỹ năng mềm như
-| Kỹ năng                       | Đánh giá         |
-|------------------------------|------------------|
-| Tiếng Anh                    | ⭐☆☆☆☆           |
-| Tin học văn phòng            | ⭐⭐⭐☆☆           |
-| Làm việc nhóm                | ⭐⭐☆☆☆           |
+
+```mermaid
+pie
+    title Kỹ năng mềm của tôi
+    "Giao tiếp" : 25
+    "Làm việc nhóm" : 20
+    "Giải quyết vấn đề" : 20
+    "Tư duy phản biện" : 15
+    "Quản lý thời gian" : 10
+    "Sáng tạo" : 10
+```
 
 ### Ngoài ra còn có kiến thức về:
 - Ngôn ngữ lập trình: ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white) | ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white) | ![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat&logo=postgresql&logoColor=white) 
