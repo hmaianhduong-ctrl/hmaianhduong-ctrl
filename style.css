@@ -24,42 +24,29 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    /* FIX LỖI: Ngăn body bị scroll */
+    height: 100vh;
+    overflow: hidden;
 }
 
+/* FIX LỖI: Chỉ cho phép container scroll nếu nội dung dài */
 .container {
     max-width: 1400px;
+    height: 100%;
     margin: 0 auto;
     padding: 50px 30px;
     display: grid;
     grid-template-columns: 350px 1fr;
     gap: 30px;
+    overflow-y: auto; /* Cho phép scroll bên trong container */
 }
 
 .icon { color: var(--primary-color); margin-right: 8px; }
 
 /* --- Cột Profile bên trái --- */
 .profile-sidebar { padding: 20px; }
-
-.avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid var(--card-color);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
 .profile-sidebar h1 { font-size: 2rem; font-weight: 700; margin-bottom: 5px; }
-
-/* THAY ĐỔI 3: Thêm style cho username */
-.profile-sidebar .username {
-    font-size: 1.1rem;
-    color: var(--text-secondary-color);
-    margin-bottom: 15px; /* Tạo khoảng cách với dòng dưới */
-    font-weight: 500;
-}
-
+.profile-sidebar .username { font-size: 1.1rem; color: var(--text-secondary-color); margin-bottom: 15px; font-weight: 500; }
 .profile-sidebar .subtitle { font-size: 1rem; font-weight: 500; color: var(--primary-color); margin-bottom: 5px; }
 .profile-sidebar .institution { font-size: 0.9rem; color: var(--text-secondary-color); margin-bottom: 30px; }
 .sidebar-section { margin-top: 30px; }
@@ -80,18 +67,40 @@ body {
 .skills-container { display: flex; flex-direction: column; gap: 15px; }
 .skill-category h4 { font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; color: var(--text-color); }
 .skill-tag { display: inline-block; background-color: #f0f0f0; padding: 5px 12px; border-radius: 16px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 8px; }
-.chart-container { width: 100%; height: calc(100% - 40px); display: flex; align-items: center; justify-content: center; }
-.project-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px dashed var(--border-color); background-color: #fafafa; }
-.icon-placeholder { font-size: 2.5rem; color: #ccc; margin-bottom: 15px; }
+.chart-container { position: relative; width: 100%; height: 100%; min-height: 250px; }
+
+/* THÊM MỚI: Style cho ô chứa ảnh dự án */
+.project-image {
+    padding: 0; /* Bỏ padding để ảnh tràn viền */
+    overflow: hidden; /* Ẩn phần ảnh thừa */
+}
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh lấp đầy ô mà không bị méo */
+    transition: transform 0.3s ease;
+}
+.project-image:hover img {
+    transform: scale(1.05); /* Hiệu ứng zoom nhẹ khi hover */
+}
 
 /* --- Thanh chức năng cuối trang --- */
-.bottom-cta { position: fixed; bottom: 20px; left: 30px; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 50px; padding: 8px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+.bottom-cta { position: fixed; bottom: 20px; left: 30px; z-index: 10; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid var(--border-color); border-radius: 50px; padding: 8px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
 .btn-primary { background-color: var(--primary-color); color: white; padding: 10px 20px; border-radius: 30px; font-weight: 500; font-size: 0.9rem; transition: background-color 0.2s; }
 .btn-primary:hover { background-color: #584ab6; }
 .login-link { font-size: 0.9rem; color: var(--text-secondary-color); font-weight: 500; }
 .theme-toggle { font-size: 1.2rem; color: var(--text-secondary-color); }
 
 /* --- Responsive --- */
-@media (max-width: 1200px) { .container { grid-template-columns: 300px 1fr; } }
-@media (max-width: 992px) { .container { grid-template-columns: 1fr; } .profile-sidebar { text-align: center; } .avatar { margin-left: auto; margin-right: auto; } .bento-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 600px) { body { padding: 20px 15px; } .container { gap: 20px; padding: 0; } .
+@media (max-width: 992px) {
+    body { height: auto; overflow: visible; } /* Reset trên mobile */
+    .container { grid-template-columns: 1fr; height: auto; overflow-y: visible; }
+    .profile-sidebar { text-align: center; }
+    .bento-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .container { padding: 20px 15px; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .grid-col-span-2, .grid-row-span-2 { grid-column: span 1; grid-row: span 1; }
+    .bottom-cta { left: 50%; transform: translateX(-50%); width: calc(100% - 30px); justify-content: center; }
+}
