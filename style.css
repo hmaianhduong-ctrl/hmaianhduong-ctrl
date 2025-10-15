@@ -21,7 +21,6 @@
 
 html, body {
     height: 100%;
-    /* overflow: hidden; */ /* Bỏ overflow: hidden ở đây để tránh scrollbar kép trên một số trình duyệt */
 }
 
 body {
@@ -31,7 +30,7 @@ body {
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    overflow-y: auto; /* Cho phép body tự động scroll khi cần */
+    overflow-y: auto;
 }
 
 .container {
@@ -43,14 +42,33 @@ body {
     display: grid;
     grid-template-columns: 350px 1fr;
     gap: 30px;
-    /* overflow-y: auto; */ /* Bỏ overflow ở container để body tự quản lý */
     scroll-behavior: smooth;
 }
 
 .icon { color: var(--primary-color); margin-right: 8px; }
 
 /* --- Cột Profile bên trái --- */
-.profile-sidebar { padding: 20px; }
+.profile-sidebar { 
+    padding: 20px; 
+    display: flex; /* Dùng flexbox để căn chỉnh nội dung */
+    flex-direction: column;
+}
+
+/* THAY ĐỔI: Style cho hình tròn avatar */
+.avatar-container {
+    width: 120px;
+    height: 120px;
+    background-color: #ccc; /* Màu nền mặc định cho hình tròn */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid var(--card-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    /* Bạn có thể dùng ảnh nền nếu muốn */
+    /* background-image: url('your-image.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+}
+
 .profile-sidebar h1 { font-size: 2rem; font-weight: 700; margin-bottom: 5px; }
 .profile-sidebar .username { font-size: 1.1rem; color: var(--text-secondary-color); margin-bottom: 15px; font-weight: 500; }
 .profile-sidebar .subtitle { font-size: 1rem; font-weight: 500; color: var(--primary-color); margin-bottom: 5px; }
@@ -63,8 +81,9 @@ body {
 /* --- Bento Grid bên phải --- */
 .bento-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(150px, auto); /* Sửa lại minmax, auto giúp item tự co giãn */
+    /* THAY ĐỔI: Chuyển lại grid 2 cột để cân đối hơn */
+    grid-template-columns: repeat(2, 1fr); 
+    grid-auto-rows: minmax(150px, auto);
     gap: 20px;
     align-items: stretch;
 }
@@ -77,54 +96,39 @@ body {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
-    position: relative; /* Thêm để đảm bảo nội dung bên trong được căn chỉnh tốt */
+    position: relative;
 }
 
 .bento-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
 .bento-item h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 15px; }
 .bento-item p { color: var(--text-secondary-color); font-size: 0.9rem; }
+
+/* THAY ĐỔI: Cập nhật lại span cho các ô */
 .grid-col-span-2 { grid-column: span 2; }
+.grid-col-span-3 { grid-column: span 3; } /* Thêm để dùng cho biểu đồ */
 .grid-row-span-2 { grid-row: span 2; }
+
 .contact-item { margin-bottom: 10px; display: flex; align-items: center; }
 .contact-item i { margin-right: 10px; width: 16px; text-align: center; }
 .skills-container { display: flex; flex-direction: column; gap: 15px; }
 .skill-category h4 { font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; color: var(--text-color); }
 .skill-tag { display: inline-block; background-color: #f0f0f0; padding: 5px 12px; border-radius: 16px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 8px; }
 
-/* Sửa lỗi biểu đồ không hiện hoặc bị cắt */
 .chart-container {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 150px; /* Đảm bảo có chiều cao tối thiểu để Chart.js vẽ */
-    position: relative; /* Quan trọng cho Chart.js để tính kích thước đúng */
+    min-height: 150px;
+    position: relative;
 }
 .chart-container canvas {
     max-width: 100%;
     max-height: 100%;
-    height: auto !important; /* Quan trọng để Chart.js không bị ghi đè chiều cao */
-    width: auto !important; /* Quan trọng để Chart.js không bị ghi đè chiều rộng */
+    height: auto !important;
+    width: auto !important;
     display: block;
 }
-
-
-/* Style cho ô chứa ảnh dự án */
-.project-image {
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center; /* Căn giữa ảnh theo chiều dọc */
-    justify-content: center; /* Căn giữa ảnh theo chiều ngang */
-}
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-.project-image:hover img { transform: scale(1.05); }
-
 
 /* --- Thanh chức năng cuối trang --- */
 .bottom-cta {
@@ -160,7 +164,7 @@ body {
 @media (max-width: 992px) {
     html, body { height: auto; overflow: visible; }
     .container { grid-template-columns: 1fr; height: auto; padding-bottom: 100px; }
-    .profile-sidebar { text-align: center; }
+    .profile-sidebar { text-align: center; align-items: center; } /* Căn giữa avatar */
     .bento-grid { grid-template-columns: repeat(2, 1fr); }
     .bottom-cta {
         position: fixed;
@@ -174,5 +178,6 @@ body {
 @media (max-width: 600px) {
     .container { padding: 20px 15px; }
     .bento-grid { grid-template-columns: 1fr; }
-    .grid-col-span-2, .grid-row-span-2 { grid-column: span 1; grid-row: span 1; }
+    /* Reset lại span trên mobile */
+    .grid-col-span-2, .grid-col-span-3 { grid-column: span 1; } 
 }
