@@ -2,9 +2,9 @@
   <img src="./banner.svg" alt="Profile banner" />
 </p>
 
-<a href="[https://your-username.github.io](https://hmaianhduong-ctrl.github.io/hmaianhduong-ctrl/)">
+<a href="https://your-username.github.io](https://hmaianhduong-ctrl.github.io/hmaianhduong-ctrl">
   <img src="https://img.shields.io/badge/My_Portfolio-6A5ACD?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Portfolio"/>
-</a>
+</a>  https://hmaianhduong-ctrl.github.io/hmaianhduong-ctrl/
 
 ## 🏆 Thông tin cá nhân
 - Họ và tên: Huỳnh Mai Ánh Dương
