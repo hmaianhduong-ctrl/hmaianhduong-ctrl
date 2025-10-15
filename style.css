@@ -20,8 +20,8 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
-    height: 100%; /* Đảm bảo html và body chiếm toàn bộ chiều cao viewport */
-    overflow: hidden; /* Ngăn scroll mặc định của body/html */
+    height: 100%;
+    /* overflow: hidden; */ /* Bỏ overflow: hidden ở đây để tránh scrollbar kép trên một số trình duyệt */
 }
 
 body {
@@ -29,22 +29,22 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    display: flex; /* Dùng flexbox để quản lý layout chính */
+    display: flex;
     flex-direction: column;
+    overflow-y: auto; /* Cho phép body tự động scroll khi cần */
 }
 
-/* FIX LỖI: Container chính chiếm hết không gian còn lại và có thể scroll */
 .container {
     max-width: 1400px;
     width: 100%;
-    flex-grow: 1; /* Cho phép container giãn nở */
+    flex-grow: 1;
     margin: 0 auto;
     padding: 50px 30px;
     display: grid;
     grid-template-columns: 350px 1fr;
     gap: 30px;
-    overflow-y: auto; /* Chỉ cho phép scroll bên trong container */
-    scroll-behavior: smooth; /* Cuộn mượt mà */
+    /* overflow-y: auto; */ /* Bỏ overflow ở container để body tự quản lý */
+    scroll-behavior: smooth;
 }
 
 .icon { color: var(--primary-color); margin-right: 8px; }
@@ -64,9 +64,9 @@ body {
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 1fr; /* Quan trọng: Các hàng sẽ có chiều cao bằng nhau trong mỗi cột */
+    grid-auto-rows: minmax(150px, auto); /* Sửa lại minmax, auto giúp item tự co giãn */
     gap: 20px;
-    align-items: stretch; /* Đảm bảo các item trong cùng một hàng có chiều cao bằng nhau */
+    align-items: stretch;
 }
 
 .bento-item {
@@ -75,8 +75,9 @@ body {
     padding: 24px;
     border: 1px solid var(--border-color);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    display: flex; /* Dùng flexbox để căn chỉnh nội dung bên trong item */
+    display: flex;
     flex-direction: column;
+    position: relative; /* Thêm để đảm bảo nội dung bên trong được căn chỉnh tốt */
 }
 
 .bento-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
@@ -90,31 +91,36 @@ body {
 .skill-category h4 { font-size: 0.9rem; font-weight: 500; margin-bottom: 8px; color: var(--text-color); }
 .skill-tag { display: inline-block; background-color: #f0f0f0; padding: 5px 12px; border-radius: 16px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 8px; }
 
-/* FIX LỖI: Biểu đồ chiếm toàn bộ không gian còn lại trong item */
+/* Sửa lỗi biểu đồ không hiện hoặc bị cắt */
 .chart-container {
-    flex-grow: 1; /* Quan trọng: Cho phép chart container giãn nở */
+    flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 10px; /* Tạo khoảng cách với tiêu đề */
+    min-height: 150px; /* Đảm bảo có chiều cao tối thiểu để Chart.js vẽ */
+    position: relative; /* Quan trọng cho Chart.js để tính kích thước đúng */
 }
 .chart-container canvas {
     max-width: 100%;
     max-height: 100%;
-    display: block; /* Loại bỏ khoảng trắng thừa dưới canvas */
+    height: auto !important; /* Quan trọng để Chart.js không bị ghi đè chiều cao */
+    width: auto !important; /* Quan trọng để Chart.js không bị ghi đè chiều rộng */
+    display: block;
 }
 
 
-/* THÊM MỚI: Style cho ô chứa ảnh dự án */
+/* Style cho ô chứa ảnh dự án */
 .project-image {
-    padding: 0; /* Bỏ padding để ảnh tràn viền */
-    overflow: hidden; /* Ẩn phần ảnh thừa */
-    display: flex; /* Quan trọng: Dùng flex để quản lý ảnh bên trong */
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Căn giữa ảnh theo chiều dọc */
+    justify-content: center; /* Căn giữa ảnh theo chiều ngang */
 }
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Đảm bảo ảnh lấp đầy ô mà không bị méo */
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 .project-image:hover img { transform: scale(1.05); }
@@ -122,11 +128,11 @@ body {
 
 /* --- Thanh chức năng cuối trang --- */
 .bottom-cta {
-    position: sticky; /* THAY ĐỔI: Dùng sticky thay fixed để nó nằm trong luồng nhưng vẫn dính */
+    position: sticky;
     bottom: 20px;
-    left: 30px; /* Đặt lại vị trí ban đầu cho desktop */
-    margin-top: 30px; /* Tạo khoảng cách với nội dung phía trên */
-    align-self: flex-start; /* Dùng với flex body để căn chỉnh */
+    left: 30px;
+    margin-top: 30px;
+    align-self: flex-start;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-color);
@@ -138,27 +144,26 @@ body {
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     z-index: 10;
 }
-/* Điều chỉnh vị trí của bottom-cta khi trên desktop để khớp với sidebar */
 @media (min-width: 993px) {
     .bottom-cta {
-        position: absolute; /* Đặt lại absolute để nó nằm trong sidebar */
-        left: 50px; /* Điều chỉnh vị trí phù hợp với sidebar */
-        bottom: 50px; /* Điều chỉnh vị trí phù hợp với sidebar */
-        transform: none; /* Bỏ transform đã dùng cho mobile */
-        width: auto; /* Trả lại width tự nhiên */
-        justify-content: flex-start; /* Căn trái */
+        position: absolute;
+        left: 50px;
+        bottom: 50px;
+        transform: none;
+        width: auto;
+        justify-content: flex-start;
     }
 }
 
 
 /* --- Responsive --- */
 @media (max-width: 992px) {
-    html, body { height: auto; overflow: visible; } /* Cho phép scroll trên mobile */
-    .container { grid-template-columns: 1fr; height: auto; overflow-y: visible; padding-bottom: 100px; /* Tạo khoảng trống cho CTA */ }
+    html, body { height: auto; overflow: visible; }
+    .container { grid-template-columns: 1fr; height: auto; padding-bottom: 100px; }
     .profile-sidebar { text-align: center; }
     .bento-grid { grid-template-columns: repeat(2, 1fr); }
     .bottom-cta {
-        position: fixed; /* Lại dùng fixed trên mobile */
+        position: fixed;
         left: 50%;
         bottom: 20px;
         transform: translateX(-50%);
