@@ -4,95 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile | Huỳnh Mai Ánh Dương</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <header>
-            <div class="profile-title">
-                P R O F I L E
-            </div>
+        <aside class="profile-sidebar">
+            <img src="https://i.pravatar.cc/150?img=40" alt="Avatar" class="avatar">
             <h1>Huỳnh Mai Ánh Dương</h1>
             <p class="subtitle">Sinh viên ngành Công nghệ Đa phương tiện</p>
-            <p class="institution">Học viện Công nghệ Bưu chính Viễn thông, TP. Hồ Chí Minh</p>
-        </header>
+            <p class="institution">Học viện Công nghệ Bưu chính Viễn thông, TP.HCM</p>
 
-        <section class="contact card">
-            <h2><i class="fas fa-link"></i> Có thể liên hệ với tôi bằng cách</h2>
-            <ul>
-                <li><i class="fas fa-phone"></i> Điện thoại: 0944036001</li>
-                <li><i class="fas fa-envelope"></i> Email: hmaianhduong@gmail.com</li>
-            </ul>
-        </section>
+            <div class="sidebar-section">
+                <h2><i class="fas fa-heart icon"></i> Sở thích</h2>
+                <ul>
+                    <li>Thiết kế, chỉnh sửa video</li>
+                    <li>Hỗ trợ truyền thông</li>
+                    <li>Nghe nhạc và chơi game để thư giãn</li>
+                </ul>
+            </div>
 
-        <section class="education card">
-            <h2><i class="fas fa-graduation-cap"></i> Học vấn</h2>
-            <ul>
-                <li>Từng học chuyên Sinh trường THPT chuyên Cà Mau.</li>
-                <li><strong>GPA học kỳ:</strong>
-                    <ul>
-                        <li>2 kỳ đạt trên 3.4/4.0 (Loại giỏi)</li>
-                        <li>2 kỳ đạt trên 3.2/4.0 (Loại giỏi)</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+            <div class="sidebar-section">
+                <h2><i class="fas fa-bullseye icon"></i> Mục tiêu nghề nghiệp</h2>
+                <ul>
+                    <li>Phát triển sản phẩm cá nhân sáng tạo</li>
+                    <li>Trở thành Kỹ xảo viên (VFX Artist)</li>
+                    <li>Tham gia các dự án phần mềm AR/VR</li>
+                    <li>Không ngừng học hỏi công nghệ mới</li>
+                </ul>
+            </div>
+        </aside>
 
-        <section class="skills card">
-            <h2><i class="fas fa-cogs"></i> Kỹ năng</h2>
-            <div class="skills-content">
-                <div class="soft-skills">
-                    <h3>Kỹ năng mềm của tôi</h3>
-                    <div class="chart-container">
-                        <canvas id="softSkillsChart"></canvas>
-                    </div>
-                </div>
-                <div class="hard-skills">
-                    <h3>Ngoài ra còn có kiến thức về</h3>
+        <main class="bento-grid">
+
+            <div class="bento-item">
+                <h3><i class="fas fa-link icon"></i> Liên hệ</h3>
+                <p class="contact-item"><i class="fas fa-phone"></i> 0944036001</p>
+                <p class="contact-item"><i class="fas fa-envelope"></i> hmaianhduong@gmail.com</p>
+            </div>
+
+            <div class="bento-item">
+                <h3><i class="fas fa-graduation-cap icon"></i> Học vấn</h3>
+                <p>Từng học chuyên Sinh, THPT Cà Mau.</p>
+                <p><strong>GPA:</strong> 2 kỳ > 3.4/4.0 và 2 kỳ > 3.2/4.0 (Loại giỏi).</p>
+            </div>
+
+            <div class="bento-item grid-col-span-2">
+                <h3><i class="fas fa-code icon"></i> Kỹ năng chuyên môn</h3>
+                <div class="skills-container">
                     <div class="skill-category">
-                        <h4>Ngôn ngữ lập trình:</h4>
-                        <span class="skill-tag html">HTML</span>
-                        <span class="skill-tag css">CSS</span>
-                        <span class="skill-tag sql">SQL</span>
+                        <h4>Ngôn ngữ:</h4>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">SQL</span>
                     </div>
                     <div class="skill-category">
-                        <h4>Phần mềm thiết kế:</h4>
-                        <span class="skill-tag ps">Photoshop</span>
-                        <span class="skill-tag ai">Illustrator</span>
-                        <span class="skill-tag ae">After Effects</span>
-                        <span class="skill-tag pr">Premiere Pro</span>
+                        <h4>Phần mềm:</h4>
+                        <span class="skill-tag">Photoshop</span>
+                        <span class="skill-tag">Illustrator</span>
+                        <span class="skill-tag">After Effects</span>
+                        <span class="skill-tag">Premiere Pro</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="hobbies card">
-            <h2><i class="fas fa-heart"></i> Sở thích</h2>
-            <ul>
-                <li>Thiết kế, chỉnh sửa video.</li>
-                <li>Hỗ trợ truyền thông.</li>
-                <li>Nghe nhạc và chơi game giúp thư giãn và cân bằng cuộc sống.</li>
-            </ul>
-        </section>
+            <div class="bento-item grid-row-span-2">
+                <h3><i class="fas fa-users icon"></i> Kỹ năng mềm</h3>
+                <div class="chart-container">
+                    <canvas id="softSkillsChart"></canvas>
+                </div>
+            </div>
 
-        <section class="goals card">
-            <h2><i class="fas fa-bullseye"></i> Mục tiêu nghề nghiệp</h2>
-            <ul>
-                <li>Phát triển các sản phẩm cá nhân sáng tạo và ứng dụng công nghệ tiên tiến.</li>
-                <li>Trở thành kỹ xảo viên (VFX Artist).</li>
-                <li>Tham gia và đóng góp vào các dự án phần mềm AR/VR.</li>
-                <li>Không ngừng học hỏi, cập nhật công nghệ và xu hướng mới trong ngành đồ họa ứng dụng thực tế AR.</li>
-            </ul>
-        </section>
+            <div class="bento-item project-placeholder">
+                <i class="fas fa-image icon-placeholder"></i>
+                <h4>Dự án nổi bật 1</h4>
+                <p>Chèn ảnh hoặc mô tả dự án của bạn ở đây.</p>
+            </div>
+            
+            <div class="bento-item project-placeholder">
+                 <i class="fas fa-video icon-placeholder"></i>
+                 <h4>Dự án nổi bật 2</h4>
+                 <p>Chèn ảnh hoặc mô tả dự án của bạn ở đây.</p>
+            </div>
 
-        <footer>
-            <p>Cảm ơn bạn đã dành thời gian tham khảo hồ sơ của tôi.</p>
-        </footer>
+        </main>
+    </div>
+
+    <div class="bottom-cta">
+        <a href="#" class="btn-primary">Tải CV</a>
+        <a href="#" class="login-link">Log in</a>
+        <a href="#" class="theme-toggle"><i class="far fa-circle"></i></a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
