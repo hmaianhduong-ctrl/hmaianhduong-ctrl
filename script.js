@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Thiết lập font chữ mặc định cho biểu đồ
         Chart.defaults.font.family = "'HelvetIns', sans-serif";
 
-        new Chart(ctx.getContext('2d'), {
+        // Tối ưu Chart.js để responsive tốt hơn
+        const softSkillsChart = new Chart(ctx.getContext('2d'), {
             type: 'pie',
             data: {
                 labels: [
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: false, // Quan trọng: Chart.js sẽ tự quản lý tỷ lệ dựa trên container
                 plugins: {
                     legend: {
                         position: 'bottom',
@@ -52,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             }
+        });
+
+        // THÊM: Cập nhật biểu đồ khi kích thước cửa sổ thay đổi
+        // Điều này giúp Chart.js render lại đúng kích thước
+        window.addEventListener('resize', () => {
+            softSkillsChart.resize();
         });
     }
 });
