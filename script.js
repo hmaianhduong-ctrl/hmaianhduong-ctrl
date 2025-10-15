@@ -1,28 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const ctx = document.getElementById('softSkillsChart').getContext('2d');
+    const ctx = document.getElementById('softSkillsChart');
     
     if (ctx) {
-        new Chart(ctx, {
+        // Thiết lập font chữ mặc định cho biểu đồ
+        Chart.defaults.font.family = "'HelvetIns', sans-serif";
+
+        new Chart(ctx.getContext('2d'), {
             type: 'pie',
             data: {
                 labels: [
-                    'Giao tiếp',
-                    'Làm việc nhóm',
-                    'Giải quyết vấn đề',
-                    'Tư duy phản biện',
-                    'Quản lý thời gian',
-                    'Sáng tạo'
+                    'Giao tiếp', 'Làm việc nhóm', 'Giải quyết vấn đề',
+                    'Tư duy phản biện', 'Quản lý thời gian', 'Sáng tạo'
                 ],
                 datasets: [{
                     label: 'Kỹ năng mềm',
                     data: [25, 20, 20, 15, 10, 10],
                     backgroundColor: [
-                        '#6a5acd', // Sáng tạo
-                        '#8a7eff', // Quản lý thời gian
-                        '#ada7ff', // Tư duy phản biện
-                        '#d0cdff', // Giải quyết vấn đề
-                        '#e8e7ff', // Làm việc nhóm
-                        '#f5f4ff'  // Giao tiếp
+                        '#6a5acd', '#8a7eff', '#ada7ff',
+                        '#d0cdff', '#e8e7ff', '#f5f4ff'
                     ],
                     borderColor: '#ffffff',
                     borderWidth: 3
@@ -36,10 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         position: 'bottom',
                         labels: {
                             color: '#555',
-                            font: {
-                                family: "'Be Vietnam Pro', sans-serif",
-                                size: 12
-                            },
                             padding: 15,
                             usePointStyle: true,
                             pointStyle: 'circle'
